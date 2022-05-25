@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Art mathématique{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1600px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 6px 8px; }
+</style>
+<style>
+.example-wrapper.h1 {max-width: 1600px; width: 95%; font: 18px/1.5 serif;}
+</style>
+<div class="example-wrapper">
+    <h1>Set Your Creative Horizons </h1>
+    <!-- C'est grâce à l'attribut name que l'on peut récupérer la valeur associée dans symfony -->
+    <form method="post" action="/calculer_nees">
+        <div>
+            <label for="Dimension" class="form-label">Start !</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension_ha" name="dimension_ha">
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension_an" name="dimension_an">
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension_nbl" name="dimension_nbl">
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension_nbc" name="dimension_nbc">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" name="calculer_nees" value="1">Calculer</button>
+            <button type="submit" class="btn btn-danger" name="imprimer" value="1">Imprimer</button>
+
+    </form>
+
+    <h1> That's Super Beautiful  </h1>
+    <img src="{{fichier_nees}}" width="100%">
+</div>
+{% endblock %}
